@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Hubungi Jokiin - Layanan jasa pengerjaan tugas akademik profesional">
+    <meta name="keywords" content="joki tugas, jasa tugas, bantuan tugas, joki coding, joki makalah">
+    <title>Hubungi Kami - Jokiin</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/img/logo.svg" alt="Jokiin Logo">
+                <span>Jokiin</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="harga.html">Harga</a>
+                <a href="testimoni.html">Testimoni</a>
+                <a href="kontak.html" class="active">Hubungi Kami</a>
+            </div>
+            <button class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <img src="assets/img/logo.svg" alt="Jokiin Logo">
+                <span>Jokiin</span>
+            </a>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="harga.html">Harga</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="kontak.html">Hubungi Kami</a>
+        </div>
+        <div class="mobile-menu-social">
+            <a href="https://wa.me/6287851824163" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/jokiin" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.instagram.com/jokiinnnnnn?igsh=MWIwM2lhbjVzdnBleA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h1 class="section-title" data-aos="fade-down">Hubungi Kami</h1>
+            <p class="section-subtitle" data-aos="fade-up">Kami siap membantu Anda dengan layanan terbaik</p>
+            
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form full-width" data-aos="fade-up">
+                    <h3>Formulir Pendaftaran Tugas</h3>
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="reg-name">Nama Lengkap</label>
+                            <input type="text" id="reg-name" name="name" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" name="email" required placeholder="Masukkan email Anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-whatsapp">Nomor WhatsApp</label>
+                            <input type="tel" id="reg-whatsapp" name="whatsapp" required placeholder="Cth: 6281234567890">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-task-type">Jenis Tugas / Layanan</label>
+                            <input type="text" id="reg-task-type" name="taskType" required placeholder="Cth: Joki Coding, Makalah, Skripsi">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-deadline">Deadline</label>
+                            <input type="date" id="reg-deadline" name="deadline" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-completion-time">Jam Terakhir Pengerjaan</label>
+                            <input type="time" id="reg-completion-time" name="completionTime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-message">Deskripsi Tugas</label>
+                            <textarea id="reg-message" name="message" required placeholder="Jelaskan tugas Anda secara detail..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i>
+                            Kirim via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info" data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-out-quart">
+                    <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Jokiin</h3>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Solusi Tugas Terpercaya</p>
+                    <div class="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        <a href="https://wa.me/6287851824163" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/jokiin" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/jokiinnnnnn?igsh=MWIwM2lhbjVzdnBleA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-easing="ease-out-quart">
+                    <h4 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Menu</h4>
+                    <ul>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="index.html">Beranda</a></li>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="tentang.html">Tentang</a></li>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="layanan.html">Layanan</a></li>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="harga.html">Harga</a></li>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"><a href="testimoni.html">Testimoni</a></li>
+                        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900"><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400" data-aos-easing="ease-out-quart">
+                    <h4 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Kontak Kami</h4>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="https://www.instagram.com/jokiinnnnnn?igsh=MWIwM2lhbjVzdnBleA==" target="_blank"><i class="fab fa-instagram"></i> @jokiinnnnnn</a></p>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="tel:+6287851824163"><i class="fas fa-phone"></i> +62 878-5182-4163</a></p>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"><a href="mailto:jokiinlahbang@gmail.com"><i class="fas fa-envelope"></i> jokiinlahbang@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600" data-aos-easing="ease-out-quart">
+                <p>&copy; 2024 Jokiin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+            once: false,
+            mirror: true,
+            offset: 50,
+            easing: 'ease-out-quart',
+            delay: 0,
+            anchorPlacement: 'top-bottom'
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const whatsapp = document.getElementById('reg-whatsapp').value;
+            const taskType = document.getElementById('reg-task-type').value;
+            const deadline = document.getElementById('reg-deadline').value;
+            const completionTime = document.getElementById('reg-completion-time').value;
+            const message = document.getElementById('reg-message').value;
+
+            const whatsappNumber = '6287851824163'; // Ganti dengan nomor WhatsApp Anda
+            const promptMessage = `Halo Jokiin, saya ingin mengajukan pengerjaan tugas.\n\n*Detail Pemesanan:*\nNama Lengkap: ${name}\nEmail: ${email}\nNomor WhatsApp: ${whatsapp}\nJenis Tugas/Layanan: ${taskType}\nDeadline: ${deadline} (Jam Terakhir: ${completionTime})\nDeskripsi Tugas: ${message}\n\nMohon tanggapannya. Terima kasih!`;
+
+            const encodedMessage = encodeURIComponent(promptMessage);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
