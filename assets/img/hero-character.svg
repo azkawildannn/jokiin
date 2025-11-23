@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#6B46C1"/>
+            <stop offset="100%" style="stop-color:#4299E1"/>
+        </linearGradient>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ED64A6"/>
+            <stop offset="100%" style="stop-color:#6B46C1"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Background Circle -->
+    <circle cx="250" cy="250" r="200" fill="url(#gradient1)" opacity="0.1"/>
+    
+    <!-- Character Body -->
+    <path d="M250 150c-55.2 0-100 44.8-100 100s44.8 100 100 100 100-44.8 100-100-44.8-100-100-100zm0 180c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z" fill="url(#gradient1)"/>
+    
+    <!-- Character Face -->
+    <circle cx="250" cy="230" r="40" fill="#F7FAFC"/>
+    <circle cx="235" cy="220" r="5" fill="#1A202C"/>
+    <circle cx="265" cy="220" r="5" fill="#1A202C"/>
+    <path d="M240 245c5 5 15 5 20 0" stroke="#1A202C" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Decorative Elements -->
+    <path d="M150 200c-10-20 10-40 30-30" stroke="url(#gradient2)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M350 200c10-20-10-40-30-30" stroke="url(#gradient2)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M200 300c-15-10-25-30-10-45" stroke="url(#gradient2)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M300 300c15-10 25-30 10-45" stroke="url(#gradient2)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Animated Particles -->
+    <circle cx="150" cy="150" r="3" fill="#ED64A6">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="150" r="3" fill="#4299E1">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="350" r="3" fill="#6B46C1">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="350" r="3" fill="#ED64A6">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+</svg> 
