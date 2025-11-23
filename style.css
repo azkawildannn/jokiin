@@ -32,16 +32,14 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg-gradient);
-    background-attachment: scroll; /* iOS fix - fixed tidak support di iOS */
+    background-attachment: scroll;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     color: var(--light);
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
-    min-height: -webkit-fill-available; /* iOS Safari fix */
     position: relative;
-    /* iOS Safari smooth scrolling */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -56,9 +54,10 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: var(--body-height); /* Use JS-calculated height */
-    min-height: 100vh;
+    min-height: 100%;
     background: 
         radial-gradient(2px 2px at 20% 20%, rgba(255, 255, 255, 0.1) 50%, transparent 50%),
         radial-gradient(2px 2px at 40% 40%, rgba(255, 255, 255, 0.1) 50%, transparent 50%),
@@ -87,9 +86,10 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: var(--body-height); /* Use JS-calculated height */
-    min-height: 100vh;
+    min-height: 100%;
     background: 
         radial-gradient(circle at 20% 30%, rgba(66, 153, 225, 0.2), transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(107, 70, 193, 0.2), transparent 40%),
