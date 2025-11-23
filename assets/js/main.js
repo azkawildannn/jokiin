@@ -1,17 +1,36 @@
 // Fix background height for iOS - extend pseudo-elements to full page height
 function fixBackgroundHeight() {
-    const bodyHeight = document.body.scrollHeight;
+    const bodyHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+    );
     document.documentElement.style.setProperty('--body-height', `${bodyHeight}px`);
+    console.log('Background height set to:', bodyHeight + 'px'); // Debug
 }
 
-// Run on load and resize
-window.addEventListener('load', fixBackgroundHeight);
+// Run multiple times to ensure it catches all content
+window.addEventListener('load', () => {
+    fixBackgroundHeight();
+    setTimeout(fixBackgroundHeight, 100);
+    setTimeout(fixBackgroundHeight, 500);
+    setTimeout(fixBackgroundHeight, 1000);
+});
+
 window.addEventListener('resize', fixBackgroundHeight);
 
 // Also run after content loads
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(fixBackgroundHeight, 100);
+    fixBackgroundHeight();
+    setTimeout(fixBackgroundHeight, 200);
 });
+
+// Run after AOS animations
+if (typeof AOS !== 'undefined') {
+    document.addEventListener('aos:in', fixBackgroundHeight);
+}
 
 // Initialize AOS
 AOS.init({
