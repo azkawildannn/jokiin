@@ -180,21 +180,44 @@
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const name = document.getElementById('reg-name').value;
-            const email = document.getElementById('reg-email').value;
-            const whatsapp = document.getElementById('reg-whatsapp').value;
-            const taskType = document.getElementById('reg-task-type').value;
-            const deadline = document.getElementById('reg-deadline').value;
-            const completionTime = document.getElementById('reg-completion-time').value;
-            const message = document.getElementById('reg-message').value;
+            // Get form element
+            const form = e.target;
+            
+            // Get form values directly from form elements
+            const name = form.querySelector('#reg-name').value || '';
+            const email = form.querySelector('#reg-email').value || '';
+            const whatsapp = form.querySelector('#reg-whatsapp').value || '';
+            const taskType = form.querySelector('#reg-task-type').value || '';
+            const deadline = form.querySelector('#reg-deadline').value || '';
+            const completionTime = form.querySelector('#reg-completion-time').value || '';
+            const message = form.querySelector('#reg-message').value || '';
 
-            const whatsappNumber = '6287851824163'; // Ganti dengan nomor WhatsApp Anda
-            const promptMessage = `Halo Jokiin, saya ingin mengajukan pengerjaan tugas.\n\n*Detail Pemesanan:*\nNama Lengkap: ${name}\nEmail: ${email}\nNomor WhatsApp: ${whatsapp}\nJenis Tugas/Layanan: ${taskType}\nDeadline: ${deadline} (Jam Terakhir: ${completionTime})\nDeskripsi Tugas: ${message}\n\nMohon tanggapannya. Terima kasih!`;
+            // Debug log to console
+            console.log('Form Data:', { name, email, whatsapp, taskType, deadline, completionTime, message });
 
+            const whatsappNumber = '6287851824163';
+            
+            // Create message with proper formatting - use template literals carefully
+            let promptMessage = 'Halo Admin Jokiin, saya tertarik dengan layanan jasa joki yang ditawarkan.\n\n';
+            promptMessage += 'Berikut adalah detail informasi saya:\n\n';
+            promptMessage += 'Nama Lengkap: ' + name + '\n';
+            promptMessage += 'Email: ' + email + '\n';
+            promptMessage += 'No. WhatsApp: ' + whatsapp + '\n';
+            promptMessage += 'Jenis Layanan: ' + taskType + '\n';
+            promptMessage += 'Deadline: ' + deadline + '\n';
+            promptMessage += 'Detail Tugas: ' + message + '\n\n';
+            promptMessage += 'Terima kasih atas perhatiannya.\n';
+            promptMessage += 'Wassalamualaikum Wr. Wb.';
+
+            // Encode message for URL
             const encodedMessage = encodeURIComponent(promptMessage);
-            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-
-            this.reset();
+            const waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
+            
+            // Open WhatsApp - works for both Safari and Chrome
+            window.location.href = waUrl;
+            
+            // Don't reset form immediately - let user see it was submitted
+            // User can manually clear if needed
         });
     </script>
 </body>
