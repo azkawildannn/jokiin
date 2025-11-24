@@ -179,45 +179,55 @@
 
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
-            // Get form element
-            const form = e.target;
             
-            // Get form values directly from form elements
-            const name = form.querySelector('#reg-name').value || '';
-            const email = form.querySelector('#reg-email').value || '';
-            const whatsapp = form.querySelector('#reg-whatsapp').value || '';
-            const taskType = form.querySelector('#reg-task-type').value || '';
-            const deadline = form.querySelector('#reg-deadline').value || '';
-            const completionTime = form.querySelector('#reg-completion-time').value || '';
-            const message = form.querySelector('#reg-message').value || '';
+            // Wait a moment to ensure all values are ready
+            setTimeout(function() {
+                // Direct access to input values
+                var nameEl = document.getElementById('reg-name');
+                var emailEl = document.getElementById('reg-email');
+                var whatsappEl = document.getElementById('reg-whatsapp');
+                var taskTypeEl = document.getElementById('reg-task-type');
+                var deadlineEl = document.getElementById('reg-deadline');
+                var completionTimeEl = document.getElementById('reg-completion-time');
+                var messageEl = document.getElementById('reg-message');
+                
+                // Get values
+                var name = nameEl ? nameEl.value : '';
+                var email = emailEl ? emailEl.value : '';
+                var whatsapp = whatsappEl ? whatsappEl.value : '';
+                var taskType = taskTypeEl ? taskTypeEl.value : '';
+                var deadline = deadlineEl ? deadlineEl.value : '';
+                var completionTime = completionTimeEl ? completionTimeEl.value : '';
+                var message = messageEl ? messageEl.value : '';
+                
+                // Debug alert - remove after testing
+                if (!whatsapp || !taskType) {
+                    alert('DEBUG:\nWhatsApp: "' + whatsapp + '"\nJenis Layanan: "' + taskType + '"');
+                    return;
+                }
 
-            // Debug log to console
-            console.log('Form Data:', { name, email, whatsapp, taskType, deadline, completionTime, message });
+                var whatsappNumber = '6287851824163';
+                
+                // Build message
+                var msg = 'Assalamualaikum Wr. Wb.\n\n';
+                msg += 'Halo Admin Jokiin, saya tertarik dengan layanan jasa joki yang ditawarkan.\n\n';
+                msg += 'Berikut adalah detail informasi saya:\n\n';
+                msg += 'Nama Lengkap: ' + name + '\n';
+                msg += 'Email: ' + email + '\n';
+                msg += 'No. WhatsApp: ' + whatsapp + '\n';
+                msg += 'Jenis Layanan: ' + taskType + '\n';
+                msg += 'Deadline: ' + deadline + '\n';
+                msg += 'Detail Tugas: ' + message + '\n\n';
+                msg += 'Terima kasih atas perhatiannya.\n';
+                msg += 'Wassalamualaikum Wr. Wb.';
 
-            const whatsappNumber = '6287851824163';
-            
-            // Create message with proper formatting - use template literals carefully
-            let promptMessage = 'Halo Admin Jokiin, saya tertarik dengan layanan jasa joki yang ditawarkan.\n\n';
-            promptMessage += 'Berikut adalah detail informasi saya:\n\n';
-            promptMessage += 'Nama Lengkap: ' + name + '\n';
-            promptMessage += 'Email: ' + email + '\n';
-            promptMessage += 'No. WhatsApp: ' + whatsapp + '\n';
-            promptMessage += 'Jenis Layanan: ' + taskType + '\n';
-            promptMessage += 'Deadline: ' + deadline + '\n';
-            promptMessage += 'Detail Tugas: ' + message + '\n\n';
-            promptMessage += 'Terima kasih atas perhatiannya.\n';
-            promptMessage += 'Wassalamualaikum Wr. Wb.';
-
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(promptMessage);
-            const waUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
-            
-            // Open WhatsApp - works for both Safari and Chrome
-            window.location.href = waUrl;
-            
-            // Don't reset form immediately - let user see it was submitted
-            // User can manually clear if needed
+                // Encode and redirect
+                var encodedMsg = encodeURIComponent(msg);
+                var url = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMsg;
+                
+                window.location.href = url;
+            }, 200);
+        });
         });
     </script>
 </body>
